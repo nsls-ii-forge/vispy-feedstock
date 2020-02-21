@@ -14,6 +14,7 @@ source:
 build:
   number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
+  skip: True  # [py<36]
 
 requirements:
   build:
@@ -36,10 +37,6 @@ requirements:
 test:
   imports:
     - vispy
-  requires:
-   - pyqt >=5.0
-  commands:
-   - python -c "import vispy; print(vispy.sys_info()); vispy.test()"
 
 about:
   home: http://vispy.org
