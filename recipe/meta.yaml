@@ -1,6 +1,6 @@
 {% set name = "vispy" %}
-{% set version = "0.6.4" %}
-{% set sha256 = "627b6574b77c86e72a1e6b4522a5c9697c6f4cbb23678d8da9ff55c339264b1f" %}
+{% set version = "0.6.5" %}
+{% set sha256 = "90cc76e79ee16c839bca05753e0c5f9f1c1c57963f2d3b248e4afac0fd75df75" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -13,26 +13,26 @@ source:
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
-  skip: True  # [py<36]
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  skip: true  # [py<36]
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - pip
     - python
+    - pip
+    - cython
+    - fontconfig  # [unix]
+    - numpy
     - setuptools
     - setuptools_scm
     - setuptools_scm_git_archive
-    - numpy
-    - fontconfig  # [unix]
-    - cython
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - fontconfig  # [unix]
     - freetype-py
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
@@ -41,6 +41,8 @@ test:
 about:
   home: http://vispy.org
   license_family: BSD
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE.txt
-  summary: 'VisPy is a high-performance interactive 2D/3D data visualization library.'
+  summary: VisPy is a high-performance interactive 2D/3D data visualization library.
+  dev_url: https://github.com/vispy/vispy
+  doc_url: http://vispy.org/documentation.html
