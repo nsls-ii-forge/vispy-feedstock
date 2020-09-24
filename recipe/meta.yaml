@@ -20,19 +20,19 @@ requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - pip
     - python
+    - pip
+    - cython
+    - fontconfig  # [unix]
+    - numpy
     - setuptools
     - setuptools_scm
     - setuptools_scm_git_archive
-    - numpy
-    - fontconfig  # [unix]
-    - cython
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - fontconfig  # [unix]
     - freetype-py
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
