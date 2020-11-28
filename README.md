@@ -5,11 +5,13 @@ Home: http://vispy.org
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/nsls-ii-forge/vispy-feedstock/blob/master/LICENSE.txt)
 
 Summary: VisPy is a high-performance interactive 2D/3D data visualization library.
 
+Development: https://github.com/vispy/vispy
 
+Documentation: http://vispy.org/documentation.html
 
 Current build status
 ====================
