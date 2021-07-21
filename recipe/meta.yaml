@@ -1,6 +1,6 @@
 {% set name = "vispy" %}
-{% set version = "0.6.6" %}
-{% set sha256 = "6f3c4d00be9e6761c046d520a86693d78a0925d47eeb2fc095e95dac776f74ee" %}
+{% set version = "0.7.3" %}
+{% set sha256 = "1edd3434247577e0910f9c76331b82a54be7e5381c022120c7336e73167b155c" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
